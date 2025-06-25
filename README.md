@@ -9,10 +9,3 @@
 - `css/styles.css` — стили
 - `js/metrika.js` — Яндекс.Метрика
 
-## Платформа
-
-Готово для размещения на GitHub Pages, Tilda или любом хостинге.
-
-## Контакты
-
-Добавлены кнопки WhatsApp + соцсети (Instagram, VK, Telegram)
