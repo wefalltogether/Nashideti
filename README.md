@@ -5,7 +5,7 @@
 ## Структура
 
 - `index.html` — основная страница
-- `assets/logo.jpg` — логотип
+- `assets/logo.png` — логотип
 - `css/styles.css` — стили
 - `js/metrika.js` — Яндекс.Метрика
 
