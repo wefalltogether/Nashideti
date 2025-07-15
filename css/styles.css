@@ -1,104 +1,234 @@
-/* css/styles.css */
+:root {
+  --violet: #7b4cc9;
+  --pink: #ff6ec7;
+  --orange: #ff9e45;
+  --blue: #3bade3;
+  --bg-light: #fdf9ff;
+  --text: #2b2b2b;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   font-family: 'Segoe UI', sans-serif;
+  background: var(--bg-light);
+  color: var(--text);
   line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  background: #fff;
-  color: #333;
 }
 
-h1, h2 {
-  text-align: center;
-  color: #462964;
-}
-
-section {
-  padding: 40px 20px;
-  max-width: 960px;
-  margin: auto;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-ul li::before {
-  content: '✔';
-  margin-right: 8px;
-  color: #462964;
-}
-
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  margin: 10px 5px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s;
-}
-
-.primary {
-  background: #7b4cc9;
-  color: #fff;
-}
-
-.secondary {
-  background: #f0a500;
-  color: #fff;
-}
-
-.whatsapp {
-  background: #25d366;
-  color: white;
-}
-
-.social {
-  display: inline-block;
-  margin: 5px;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.vk { color: #4a76a8; }
-.insta { color: #d6249f; }
-.tg { color: #0088cc; }
-
-.hero {
-  background: #efe9f9;
+header.hero {
+  background: linear-gradient(120deg, var(--violet), var(--pink));
+  color: var(--white);
   text-align: center;
   padding: 60px 20px;
 }
 
-.hero .logo {
-  max-width: 100px;
+.logo {
+  width: 120px;
   margin-bottom: 20px;
 }
 
+.hero h1 {
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.hero-buttons .btn {
+  margin: 10px;
+}
+
+section {
+  max-width: 1140px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  color: var(--violet);
+  margin-bottom: 40px;
+}
+
+ul.features {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+ul.features li::before {
+  content: '✔';
+  margin-right: 6px;
+  color: var(--violet);
+}
+
+ul.features li {
+  flex: 1 1 250px;
+  margin-bottom: 10px;
+}
+
+/* Buttons */
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  color: var(--white);
+  transition: 0.3s ease;
+}
+
+.primary {
+  background: var(--violet);
+}
+
+.whatsapp {
+  background: #25d366;
+}
+
+.phone {
+  background: var(--orange);
+}
+
+.btn:hover {
+  filter: brightness(1.1);
+}
+
+/* Service cards (3x3 interactive grid) */
+
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
 }
 
-.service {
-  background: #f9f9f9;
-  border-left: 5px solid #7b4cc9;
-  padding: 20px;
-  border-radius: 10px;
+.service-card {
+  position: relative;
+  background: var(--white);
+  color: var(--text);
+  border-radius: 12px;
+  height: 200px;
+  text-align: center;
+  perspective: 1000px;
+  transition: transform 0.5s;
+  cursor: pointer;
 }
 
-.map iframe {
+.service-card .front,
+.service-card .back {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 300px;
-  border: none;
+  height: 100%;
+  padding: 20px;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1rem;
 }
+
+.service-card .front {
+  background: var(--blue);
+  color: white;
+}
+
+.service-card .back {
+  background: var(--orange);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.service-card:hover {
+  transform: rotateY(180deg);
+}
+
+.service-card:hover .front {
+  transform: rotateY(180deg);
+}
+
+.service-card:hover .back {
+  transform: rotateY(0);
+}
+
+/* Контакты и карта */
+
+.contacts .contact-links {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.contacts .social {
+  font-weight: bold;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: var(--violet);
+  color: var(--white);
+}
+
+.contacts .map {
+  margin-top: 30px;
+  border: 3px solid var(--violet);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Календарь */
+
+.calendar iframe {
+  border-radius: 12px;
+  border: 3px solid var(--pink);
+  max-width: 100%;
+}
+
+/* Footer */
 
 footer {
-  background: #f5f5f5;
+  background: #f1f1f1;
   text-align: center;
-  padding: 20px;
+  padding: 30px 10px;
+  color: #555;
+}
+
+/* Адаптивность */
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .contacts .contact-links {
+    flex-direction: column;
+    align-items: center;
+  }
 }
