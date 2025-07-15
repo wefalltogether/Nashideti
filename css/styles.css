@@ -22,14 +22,19 @@ body {
   line-height: 1.6;
 }
 
+/* ========== SECTION CONTAINER ========== */
+section {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
 /* ========== HERO SECTION ========== */
 .hero {
   background: linear-gradient(135deg, var(--violet), var(--pink));
   text-align: center;
   padding: 60px 20px;
   color: var(--white);
-  position: relative;
-  overflow: hidden;
 }
 
 .logo-big {
@@ -43,8 +48,8 @@ body {
 }
 
 .hero h1 span {
-  color: #ffffff;
   background: var(--orange);
+  color: white;
   padding: 4px 12px;
   border-radius: 12px;
 }
@@ -91,7 +96,6 @@ body {
 /* ========== ABOUT SECTION ========== */
 .about {
   background-color: #f7efff;
-  padding: 60px 20px;
   text-align: center;
 }
 
@@ -101,27 +105,32 @@ body {
 }
 
 .about .features {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
   margin-top: 30px;
+  padding: 0;
+  list-style: none;
 }
 
 .about .features li {
-  background: var(--white);
-  border: 1px solid var(--violet);
-  padding: 10px 16px;
-  border-radius: 25px;
-  font-size: 0.95rem;
-  box-shadow: 0 2px 5px var(--shadow);
+  background: #fff;
+  border-left: 5px solid var(--violet);
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.about .features li::before {
+  content: '✨';
+  font-size: 1.2rem;
 }
 
 /* ========== SERVICE GRID ========== */
-.services {
-  padding: 60px 20px;
-}
-
 .services h2 {
   text-align: center;
   color: var(--violet);
@@ -143,12 +152,8 @@ body {
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   position: relative;
   overflow: hidden;
-}
-
-.service-card {
   opacity: 0;
   transform: translateY(20px);
-  transition: all 0.6s ease;
 }
 
 .service-card.visible {
@@ -174,7 +179,6 @@ body {
 /* ========== CONTACTS ========== */
 .contacts {
   background: #fff;
-  padding: 60px 20px;
   text-align: center;
 }
 
@@ -231,11 +235,6 @@ footer {
     width: 100px;
   }
 
-  .about .features {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .contact-actions {
     flex-direction: column;
     gap: 10px;
@@ -243,6 +242,7 @@ footer {
 
   .service-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .service-card {
