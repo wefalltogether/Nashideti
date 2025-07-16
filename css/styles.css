@@ -84,7 +84,9 @@ body {
 .btn:hover {
   transform: scale(1.05);
 }
-
+.vk { background: #4a76a8; }
+.insta { background: #e1306c; }
+.tg { background: #0088cc; }
 .whatsapp { background: #25d366; }
 .phone { background: var(--orange); }
 
