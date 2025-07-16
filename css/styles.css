@@ -55,8 +55,12 @@ body {
 }
 
 .subhead {
-  font-size: 2.2rem;
-  color: var(--orange);
+  background: var(--orange);
+  color: white;
+  padding: 6px 18px;
+  border-radius: 20px;
+  display: inline-block;
+  font-size: 2rem;
   margin-top: 10px;
 }
 
@@ -108,6 +112,11 @@ body {
   gap: 30px;
 }
 
+.services h2 {
+  margin-top: -10px;
+  margin-bottom: 30px;
+}
+
 .service-card {
   background: var(--violet);
   color: white;
@@ -127,32 +136,32 @@ body {
 }
 
 /* Contacts */
+.contacts .container,
+.contacts p,
+.contacts a {
+  text-align: center;
+}
+
 .contacts h2 {
   text-align: center;
   color: var(--violet);
   margin-bottom: 20px;
 }
 
-.contact-actions {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 20px 0;
-}
-
-.social {
-  background: var(--pink);
-  padding: 10px 20px;
-  color: white;
+.contact-actions .social {
+  padding: 12px 20px;
   border-radius: 30px;
   font-weight: bold;
+  font-size: 1rem;
   text-decoration: none;
+  display: inline-block;
+  margin: 6px;
+  color: white;
 }
 
-.vk { background: #4a76a8; }
-.insta { background: #e1306c; }
-.tg { background: #0088cc; }
+.social.vk { background: #4a76a8; }
+.social.insta { background: #e1306c; }
+.social.tg { background: #0088cc; }
 
 .map {
   margin-top: 30px;
